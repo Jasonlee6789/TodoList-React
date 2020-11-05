@@ -1,5 +1,13 @@
 import React from "react";
 export default class AddTodo extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.content !== this.props.content) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   render() {
     let { add } = this.props;
     return (
